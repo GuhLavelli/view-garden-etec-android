@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:orientation="vertical"
+    tools:context=".ConfigsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/ciano1"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txvTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vaso 0 - Configurações"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="356dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="10dp"
+            android:text="Defina os intervalos que melhor se adapte a sua planta!"
+            android:textAlignment="center"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_umidadeSolo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4" />
+
+    <!-- CardView Temperatura -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_umidadeSolo"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_temperatura"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#8DBAEA">
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="Min:"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/seekUmidadeSolo_min"
+                    app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+                <TextView
+                    android:id="@+id/txvUmidadeSolo_porceMin"
+                    android:layout_width="42dp"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="25dp"
+                    android:text="0%"
+                    android:textSize="19sp"
+                    app:layout_constraintStart_toEndOf="@+id/seekUmidadeSolo_min"
+                    app:layout_constraintTop_toBottomOf="@+id/txvUmidadeSolo_porceMax" />
+
+                <SeekBar
+                    android:id="@+id/seekUmidadeSolo_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="0"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekUmidadeSolo_max" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Umidade do Solo"
+                    android:textColor="@color/ciano1"
+                    android:textSize="24sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/linha_umidadeSolo"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/ciano1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                <SeekBar
+                    android:id="@+id/seekUmidadeSolo_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="100"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_umidadeSolo" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="20dp"
+                    android:text="Max:"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toStartOf="@+id/seekUmidadeSolo_max"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_umidadeSolo" />
+
+                <TextView
+                    android:id="@+id/txvUmidadeSolo_porceMax"
+                    android:layout_width="57dp"
+                    android:layout_height="29dp"
+                    android:layout_marginTop="21dp"
+                    android:text="100%"
+                    android:textSize="19sp"
+                    app:layout_constraintStart_toEndOf="@+id/seekUmidadeSolo_max"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_umidadeSolo" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    <!-- CardView Temperatura -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_temperatura"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_umidadeAr"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_umidadeSolo">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#8DBAEA">
+                
+                <TextView
+                    android:id="@+id/textView_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperatura Ambiente"
+                    android:textSize="24sp"
+                    android:textColor="@color/ciano1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <View
+                    android:id="@+id/linha_temperatura"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/ciano1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_temp" />
+                <!-- SeekBar Max -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max:"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_temperatura"
+                    app:layout_constraintEnd_toStartOf="@+id/seekTemperatura_max"/>
+                <SeekBar
+                    android:id="@+id/seekTemperatura_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="100"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_temperatura"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/txvTemperatura_porceMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50°C"
+                    android:textSize="19sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekTemperatura_max"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_temperatura"/>
+                <!--SeekBar Min -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min:"
+                    android:textSize="20sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@+id/seekTemperatura_max"
+                    app:layout_constraintEnd_toStartOf="@+id/seekTemperatura_min"/>
+                <SeekBar
+                    android:id="@+id/seekTemperatura_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="0"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintTop_toBottomOf="@+id/seekTemperatura_max"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/txvTemperatura_porceMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0°C"
+                    android:textSize="19sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekTemperatura_min"
+                    app:layout_constraintTop_toBottomOf="@+id/seekTemperatura_max"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    <!-- CardView Umidade Ar -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_umidadeAr"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_temperatura"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cardView_luminosidade">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#8DBAEA">
+
+                <TextView
+                    android:id="@+id/textView_umidAr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Umidade do Ar"
+                    android:textSize="24sp"
+                    android:textColor="@color/ciano1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <View
+                    android:id="@+id/linha_umidadeAr"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/ciano1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_umidAr" />
+                <!-- SeekBar Max -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max:"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_umidadeAr"
+                    app:layout_constraintEnd_toStartOf="@+id/seekUmidadeAr_max"/>
+                <SeekBar
+                    android:id="@+id/seekUmidadeAr_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="100"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_umidadeAr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/txvUmidadeAr_porceMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80%"
+                    android:textSize="19sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekUmidadeAr_max"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_umidadeAr"/>
+                <!--SeekBar Min -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min:"
+                    android:textSize="20sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@+id/seekUmidadeAr_max"
+                    app:layout_constraintEnd_toStartOf="@+id/seekUmidadeAr_min"/>
+                <SeekBar
+                    android:id="@+id/seekUmidadeAr_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="0"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintTop_toBottomOf="@+id/seekUmidadeAr_max"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/txvUmidadeAr_porceMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20%"
+                    android:textSize="19sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekUmidadeAr_min"
+                    app:layout_constraintTop_toBottomOf="@+id/seekUmidadeAr_max"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    <!--CardView Luminosidade -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_luminosidade"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/cardView_umidadeAr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/buttonConfig_Confirmar">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#8DBAEA">
+
+                <TextView
+                    android:id="@+id/textView_lumi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Luminosidade"
+                    android:textSize="24sp"
+                    android:textColor="@color/ciano1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+                <View
+                    android:id="@+id/linha_luminosidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/ciano1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_lumi" />
+                <!-- SeekBar Max -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max:"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_luminosidade"
+                    app:layout_constraintEnd_toStartOf="@+id/seekLuminosidade_max"/>
+                <SeekBar
+                    android:id="@+id/seekLuminosidade_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="100"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_luminosidade"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/txvLuminosidade_porceMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100%"
+                    android:textSize="19sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekLuminosidade_max"
+                    app:layout_constraintTop_toBottomOf="@+id/linha_luminosidade"/>
+                <!--SeekBar Min -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min:"
+                    android:textSize="20sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@+id/seekLuminosidade_max"
+                    app:layout_constraintEnd_toStartOf="@+id/seekLuminosidade_min"/>
+                <SeekBar
+                    android:id="@+id/seekLuminosidade_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginStart="50dp"
+                    android:progress="0"
+                    android:progressTint="@color/ciano1"
+                    android:thumbTint="@color/ciano1"
+                    app:layout_constraintTop_toBottomOf="@+id/seekLuminosidade_max"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+                <TextView
+                    android:id="@+id/txvLuminosidade_porceMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0%"
+                    android:textSize="19sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintStart_toEndOf="@+id/seekLuminosidade_min"
+                    app:layout_constraintTop_toBottomOf="@+id/seekLuminosidade_max"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonConfig_Confirmar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Confirmar"
+            android:padding="15dp"
+            android:background="@drawable/button_shape"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <Button
+            android:id="@+id/buttonConfig_Cancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:padding="15dp"
+            android:background="@drawable/button_shape"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
